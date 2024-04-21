@@ -1,9 +1,9 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
 
-import { Metadata, Viewport } from 'next';
+import { Metadata } from 'next';
 import siteMetadata from '../data/siteMetadata';
-
+import { Viewport } from 'next/dist/lib/metadata/types/extra-types';
 import Navbar from '@/components/shared/Navbar';
 import Footer from '@/components/shared/Footer';
 import AppProviders from '@/components/providers/AppProviders';

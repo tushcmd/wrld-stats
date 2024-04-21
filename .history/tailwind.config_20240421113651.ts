@@ -1,6 +1,5 @@
 import type { Config } from "tailwindcss"
 
-
 const config = {
   darkMode: ["class"],
   content: [
@@ -79,14 +78,3 @@ const config = {
 } satisfies Config
 
 export default config
-
-const BREAKPOINTS = {
-	SM: {
-		MIN: 0,
-		MAX: 1024,
-	},
-	LG: {
-		MIN: 1025,
-		MAX: 1920,
-	},
-};

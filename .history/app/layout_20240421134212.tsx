@@ -10,11 +10,7 @@ import AppProviders from '@/components/providers/AppProviders';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const viewport: Viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1,
-};
+
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),

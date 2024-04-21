@@ -5,7 +5,7 @@ import Logo from './Logo';
 const Navbar: FC = () => {
   return (
     <nav className="border-b py-5">
-      <div className="layout-container flex justify-between items-center">
+      <div className="mx-auto px-5 flex justify-between items-center ">
         <Logo />
         <ThemeSwitcherButton />
       </div>

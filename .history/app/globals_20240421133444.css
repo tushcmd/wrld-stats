@@ -94,7 +94,7 @@
 
   /* LAYOUTS  */
 	.layout-container {
-		@apply container mx-auto px-5;
+		@apply flex-row mx-auto px-5;
 	}
 
 	.page-container {
