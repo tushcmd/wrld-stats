@@ -98,6 +98,6 @@
 	}
 
 	.page-container {
-		@apply layout-container py-20 flex flex-col gap-16 max-w-7xl;
+		@apply layout-container py-20 flex flex-col gap-16  max-w-7xl;
 	}
 }
