@@ -1,6 +1,5 @@
 
 import React, { FC } from 'react'
-import { TableDemo } from './list'
 
 
 const Hero: FC = () => {
@@ -9,7 +8,6 @@ const Hero: FC = () => {
       <div>
         <p className='text-3xl lg:text-8xl tracking-tighter font-bold bg-gradient-to-br from-foreground via-secondary-foreground/90 to-muted-foreground bg-clip-text text-transparent drop-shadow-sm'>Invoices</p>
       </div>
-      <TableDemo />
     </section>
   )
 }
