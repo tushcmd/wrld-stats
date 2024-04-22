@@ -2,11 +2,7 @@
 
 import Main from "@/components/Main/Main";
 
-
-export default async function Home() {
-
-  //const countries: Country[] = await fetcher('https://restcountries.eu/rest/v2/all');
-
+export default function Home() {
   return (
     <main className="page-container">
       {/*<Hero />*/}

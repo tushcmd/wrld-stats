@@ -20,7 +20,7 @@ export async function fetcher<JSON = any>(
       error.status = res.status;
       throw error;
     } else {
-      throw new Error('An unexpected error occurred');
+      throw new Error("An unexpected error occurred");
     }
   }
 
