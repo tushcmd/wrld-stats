@@ -75,7 +75,7 @@ const CountriesTable: FC<CountriesTableProps> = ({ countries }) => {
             {/*Heading*/}
             <div className='flex p-5'>
                 {/*Heading flag*/}
-                <div className='flex-1 mr-4'>
+                <div className='flex-1 mr-4 hidden md:block'>
                 </div>
                 {/*Heading name*/}
                 <button
@@ -95,7 +95,7 @@ const CountriesTable: FC<CountriesTableProps> = ({ countries }) => {
                 </button>
                 {/*Heading area*/}
                 <button
-                    className='flex-[4] text-muted-foreground font-medium flex justify-center items-center'
+                    className='hidden md:block flex-[4] text-muted-foreground font-medium flex justify-center items-center'
                     onClick={() => setValueAndDirection('area')}
                 >
                     <div>
@@ -105,7 +105,7 @@ const CountriesTable: FC<CountriesTableProps> = ({ countries }) => {
                 </button>
                 {/*Heading gini*/}
                 <button
-                    className='flex-[4] text-muted-foreground font-medium flex justify-center items-center'
+                    className='hidden md:block flex-[4] text-muted-foreground font-medium flex justify-center items-center'
                     onClick={() => setValueAndDirection('gini')}
                 >
                     <div>Gini</div>
@@ -117,7 +117,7 @@ const CountriesTable: FC<CountriesTableProps> = ({ countries }) => {
                 <Link href={`/country/${country.alpha3Code}`} key={country.name}>
                     <div className='flex p-5 items-center bg-card rounded-[8px] mb-4'>
                         {/* Countryflag */}
-                        <div className='flex-[1] mr-4'>
+                        <div className='flex-[1] mr-4 hidden md:block'>
                             <Image
                                 src={country.flag}
                                 alt={country.name}
@@ -130,9 +130,9 @@ const CountriesTable: FC<CountriesTableProps> = ({ countries }) => {
                         {/*population*/}
                         <div className='flex-[4]'>{country.population}</div>
                         {/*area*/}
-                        <div className='flex-[4]'>{country.area || 0}</div>
+                        <div className='flex-[4] hidden md:block'>{country.area || 0}</div>
                         {/*gini*/}
-                        <div className='flex-[4]'>{country.gini || 0}</div>
+                        <div className='flex-[4] hidden md:block'>{country.gini || 0}</div>
                     </div>
                 </Link>
             ))}

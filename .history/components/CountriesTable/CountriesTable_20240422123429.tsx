@@ -116,7 +116,6 @@ const CountriesTable: FC<CountriesTableProps> = ({ countries }) => {
             {orderedCountries.map((country) => (
                 <Link href={`/country/${country.alpha3Code}`} key={country.name}>
                     <div className='flex p-5 items-center bg-card rounded-[8px] mb-4'>
-                        {/* Countryflag */}
                         <div className='flex-[1] mr-4'>
                             <Image
                                 src={country.flag}
@@ -125,13 +124,9 @@ const CountriesTable: FC<CountriesTableProps> = ({ countries }) => {
                                 className="object-contain rounded-[2px]"
                             />
                         </div>
-                        {/*name*/}
                         <div className='flex-[4] items-start'>{country.name}</div>
-                        {/*population*/}
                         <div className='flex-[4]'>{country.population}</div>
-                        {/*area*/}
                         <div className='flex-[4]'>{country.area || 0}</div>
-                        {/*gini*/}
                         <div className='flex-[4]'>{country.gini || 0}</div>
                     </div>
                 </Link>
