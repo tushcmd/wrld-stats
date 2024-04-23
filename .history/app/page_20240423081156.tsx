@@ -1,17 +1,11 @@
 import Main from '@/components/Main/Main';
-import { useFetchCountries } from './fetchCountries';
+import getData from './getData';
 import { Country } from '@/types/item-types';
+import { fetcher } from '@/lib/utils';
 
-export default function Page() {
-  const { countries, isLoading, isError } = useFetchCountries();
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (isError) {
-    return <div>Error fetching data</div>;
-  }
+export default async function Home() {
+  //const countries = await getData();
+  const countries = await fetcher('https://restcountries.eu/rest/v2/all')
 
   return (
     <main className="page-container">
@@ -21,6 +15,7 @@ export default function Page() {
 }
 
 const ServerMain = ({ countries }: { countries: Country[] }) => {
+  
   return <Main countries={countries} />;
 };
 

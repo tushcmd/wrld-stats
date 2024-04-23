@@ -1,31 +1,30 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import CountriesTable from '@/components/CountriesTable/CountriesTable';
-import SearchInput from '@/components/SearchInput/SearchInput';
-import { Country } from '@/types/item-types';
+import { useState, useEffect } from "react";
+import CountriesTable from "../CountriesTable/CountriesTable";
+import SearchInput from "../SearchInput/SearchInput";
 
-interface MainProps {
+import { Country } from '@/types/item-types'
+
+interface HomeProps {
   countries: Country[];
 }
 
-export default function Main() {
-  
-  const [countries, setCountries] = useState<Country[]>([]);
+export default function Main({ countries }: HomeProps) {
   const [keyword, setKeyword] = useState('');
 
-  
-  const filteredCountries = countries?.length ? countries.filter(
+  const filteredCountries = countries.filter(
     (country) =>
       country.name.toLowerCase().includes(keyword) ||
       country.region.toLowerCase().includes(keyword) ||
       country.subregion.toLowerCase().includes(keyword)
-  ) : [];
+  );
 
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setKeyword(e.target.value.toLowerCase());
   };
+  
 
   return (
     <>
@@ -38,4 +37,15 @@ export default function Main() {
       <CountriesTable countries={filteredCountries} />
     </>
   );
+}
+
+export async function getStaticProps(): Promise<{ props: HomeProps }> {
+  const res = await fetch('https://restcountries.com/v3.1/all');
+  const country: Country[] = await res.json();
+
+  return {
+    props: {
+      country,
+    },
+  };
 }

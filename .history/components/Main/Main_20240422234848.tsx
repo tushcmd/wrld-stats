@@ -1,20 +1,24 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CountriesTable from '@/components/CountriesTable/CountriesTable';
 import SearchInput from '@/components/SearchInput/SearchInput';
 import { Country } from '@/types/item-types';
 
-interface MainProps {
-  countries: Country[];
-}
-
 export default function Main() {
-  
   const [countries, setCountries] = useState<Country[]>([]);
   const [keyword, setKeyword] = useState('');
 
-  
+  useEffect(() => {
+    const fetchCountries = async () => {
+      const res = await fetch('https://restcountries.eu/rest/v2/all');
+      const data: Country[] = await res.json();
+      setCountries(data);
+    };
+
+    fetchCountries();
+  }, []);
+
   const filteredCountries = countries?.length ? countries.filter(
     (country) =>
       country.name.toLowerCase().includes(keyword) ||
@@ -39,3 +43,13 @@ export default function Main() {
     </>
   );
 }
+//export async function getStaticProps(): Promise<{ props: HomeProps }> {
+//  const res = await fetch('https://restcountries.com/v3.1/all');
+//  const countries: Country[] = await res.json();
+//
+//  return {
+//    props: {
+//      countries,
+//    },
+//  };
+//}

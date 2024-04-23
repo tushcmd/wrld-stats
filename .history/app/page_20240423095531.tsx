@@ -1,17 +1,9 @@
 import Main from '@/components/Main/Main';
-import { useFetchCountries } from './fetchCountries';
+import { getData } from './getData';
 import { Country } from '@/types/item-types';
 
-export default function Page() {
-  const { countries, isLoading, isError } = useFetchCountries();
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (isError) {
-    return <div>Error fetching data</div>;
-  }
+export default async function Page() {
+  const countries = await getData();
 
   return (
     <main className="page-container">

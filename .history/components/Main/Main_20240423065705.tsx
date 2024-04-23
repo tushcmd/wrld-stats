@@ -1,13 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CountriesTable from '@/components/CountriesTable/CountriesTable';
 import SearchInput from '@/components/SearchInput/SearchInput';
 import { Country } from '@/types/item-types';
-
-interface MainProps {
-  countries: Country[];
-}
 
 export default function Main() {
   
