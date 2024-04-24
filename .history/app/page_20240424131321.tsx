@@ -40,4 +40,4 @@ const ServerMain = ({ countries }: { countries: Country[] }) => {
 
 export { ServerMain };
 
-*/}
+*`/}

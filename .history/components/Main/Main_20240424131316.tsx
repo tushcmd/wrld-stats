@@ -76,12 +76,13 @@ export default function Main() {
   return (
     <>
       {/* No of countries + InputContainer */}
-//      <div className="flex justify-between items-center">
-//        {/* No of countries */}
-//        <div>{countries.length} countries</div>
-//        <SearchInput onChange={onInputChange} />
-//      </div>
-//      <CountriesTable countries={filteredCountries} />
-//    </>
-//  );
-//}
+      <div className="flex justify-between items-center">
+        {/* No of countries */}
+        <div>{countries.length} countries</div>
+        <SearchInput onChange={onInputChange} />
+      </div>
+      <CountriesTable countries={filteredCountries} />
+    </>
+  );
+}
+*/}
