@@ -13,7 +13,7 @@ export default async function Page() {
 }
 
 const ServerMain = ({ countries }: { countries: Country[] }) => {
-  return <Main />;
+  return <Main countries={countries} />;
 };
 
 export { ServerMain };
